@@ -1,0 +1,28 @@
+03.report.process.shell.txt
+
+1. ps -e
+	output:  9122 ?        00:00:08 sublime_text
+ 9136 ?        00:00:01 plugin_host
+ 9306 ?        00:00:00 kworker/1:1
+ 9475 ?        00:00:00 ibus-engine-uni
+ 9733 ?        00:00:00 kworker/u8:3
+ 9779 ?        00:00:00 kworker/0:1
+ 9788 ?        00:00:00 kworker/1:0
+ 9791 ?        00:00:00 kworker/u8:0
+ 9809 ?        00:00:00 kworker/0:0
+ 9829 ?        00:00:00 kworker/u8:1
+
+2. ps -e | grep "sublime"
+	output:  9122 ?        00:00:09 sublime_text
+
+3. cat /proc/9122/status | grep "State"
+	output: State:	S (sleeping)
+
+4. kill -STOP 9122
+	output: (pause the process)
+
+5. kill -CONT 9122
+	output: (resume the process)
+
+6. kill -KILL 9122
+	output: (process is terminated)
