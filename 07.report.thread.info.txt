@@ -1,0 +1,8 @@
+1. input: ps -o nlwp 2434
+	output: 
+		NLWP:
+			43
+
+2.	cd /proc/2434/task
+  	ls | wc -l
+		output: 42
